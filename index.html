@@ -3,117 +3,1030 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pratik Dudhatra | Flutter Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <meta
+    name="description"
+    content="Pratik Dudhatra - Mobile Application Developer with 6.5+ years of experience specializing in Flutter, Dart, BLoC, REST APIs, Android and iOS."
+  />
+
+  <meta
+    name="keywords"
+    content="Flutter Developer, Flutter, Dart, Mobile Application Developer, BLoC, REST API, Android, iOS, Firebase"
+  />
+
+  <meta name="author" content="Pratik Dudhatra" />
+
+  <title>Pratik Dudhatra | Mobile Application Developer</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; line-height: 1.6; padding: 2rem; max-width: 800px; margin: auto; color: #333; background: #f9f9f9; }
-    h1, h2, h3 { color: #111; margin-top: 2rem; }
-    a { color: #007acc; text-decoration: none; }
-    ul { padding-left: 1.2rem; }
-    section { margin-bottom: 2.5rem; }
+    :root {
+      --bg: #0b0d10;
+      --surface: #12161b;
+      --surface-hover: #181d23;
+      --border: #252b33;
+      --text: #f5f7fa;
+      --muted: #9ba4af;
+      --accent: #54a8ff;
+      --accent-soft: rgba(84, 168, 255, 0.12);
+      --success: #5bd69a;
+      --max-width: 1080px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: auto;
+    }
+
+    /* Navigation */
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11, 13, 16, 0.88);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 18px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 720px;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+    }
+
+    h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-title {
+      font-size: clamp(20px, 3vw, 28px);
+      color: #d8dde4;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 750px;
+      color: var(--muted);
+      font-size: 17px;
+      margin-bottom: 32px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--text);
+      color: var(--bg);
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-secondary {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+    }
+
+    .button-secondary:hover {
+      background: var(--surface-hover);
+    }
+
+    /* Sections */
+
+    section {
+      padding: 90px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -1.5px;
+      margin-bottom: 35px;
+    }
+
+    /* About */
+
+    .about-text {
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* Skills */
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      padding: 10px 15px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      border-radius: 9px;
+      color: #dce1e7;
+      font-size: 14px;
+    }
+
+    .skill:hover {
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    /* Projects */
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      padding: 26px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: 0.25s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: #3a424c;
+      background: var(--surface-hover);
+    }
+
+    .project.featured {
+      grid-column: span 2;
+      border-color: rgba(84, 168, 255, 0.35);
+      background:
+        linear-gradient(
+          135deg,
+          rgba(84, 168, 255, 0.08),
+          transparent 55%
+        ),
+        var(--surface);
+    }
+
+    .project-number {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+
+    .project h3 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .project ul {
+      padding-left: 18px;
+      color: #c4cbd3;
+    }
+
+    .project li {
+      margin-bottom: 7px;
+    }
+
+    .tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 20px;
+    }
+
+    .tech span {
+      font-size: 12px;
+      color: var(--muted);
+      padding: 5px 9px;
+      border-radius: 6px;
+      background: #0d1014;
+      border: 1px solid var(--border);
+    }
+
+    /* Experience */
+
+    .experience {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .experience-item {
+      position: relative;
+      padding-left: 25px;
+      border-left: 1px solid var(--border);
+    }
+
+    .experience-item::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .experience-date {
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .experience h3 {
+      font-size: 21px;
+      margin-bottom: 3px;
+    }
+
+    .company {
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .experience ul {
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    /* Education */
+
+    .education-card {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--surface);
+      margin-bottom: 14px;
+    }
+
+    .education-card h3 {
+      margin-bottom: 4px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+    }
+
+    /* Contact */
+
+    .contact-card {
+      padding: 40px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(84, 168, 255, 0.08),
+          transparent 60%
+        ),
+        var(--surface);
+    }
+
+    .contact-card p {
+      color: var(--muted);
+      max-width: 650px;
+      margin-bottom: 25px;
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 700px) {
+      .container {
+        width: min(var(--max-width), calc(100% - 28px));
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 80px 0;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .project.featured {
+        grid-column: span 1;
+      }
+
+      .contact-card {
+        padding: 25px;
+      }
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>Pratik Dudhatra</h1>
-    <p>Flutter Developer | 6+ Years of Experience</p>
-    <p>
-      📧 pratikdudhatra65@gmail.com · 📞 +91 76987 34081 · 📍 Surat, India<br>
-      <a href="https://www.linkedin.com/in/pratik-dudhatra-003b4b145" target="_blank">LinkedIn</a> ·
-      <a href="https://github.com/pratikdudhatra65" target="_blank">GitHub</a>
-    </p>
-  </header>
 
-  <section>
-    <h2>About Me</h2>
-    <p>Experienced Mobile Application Developer with a strong history of building cross-platform applications using Flutter. Skilled in Firebase, state management (Provider, BLoC, GetX), project management, and team leadership. Proven ability to lead releases, communicate with clients, and deliver high-quality mobile solutions aligned with business goals.</p>
-  </section>
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="logo">Pratik<span>.</span></a>
 
-  <section>
-    <h2>Projects</h2>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <h3>Empower QLM</h3>
-    <ul>
-      <li>Built quality lifecycle management modules using Flutter + Firebase</li>
-      <li>Implemented offline support and local database sync</li>
-    </ul>
+  <main>
 
-    <h3>Tata Neu – Bill Payment</h3>
-    <ul>
-      <li>Developed payment modules using Flutter WebView</li>
-      <li>Connected Sanity CMS with Node.js for seamless backend integration</li>
-    </ul>
+    <!-- Hero -->
+    <header class="hero">
+      <div class="container">
+        <div class="hero-content">
 
-    <h3>SwipeCart</h3>
-    <ul>
-      <li>Converted WooCommerce/Shopify stores into mobile apps</li>
-      <li>Led the development of reusable UI and e-commerce modules</li>
-    </ul>
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            Mobile Application Developer · 6.5+ Years
+          </div>
 
-    <h3>Byebye.io</h3>
-    <ul>
-      <li>Inventory and networking tool with item-based sharing features</li>
-    </ul>
+          <h1>
+            Building mobile experiences
+            <span>with Flutter.</span>
+          </h1>
 
-    <h3>AutoSky+</h3>
-    <ul>
-      <li>GPS-based safety and tracking app using real-time location</li>
-    </ul>
+          <p class="hero-title">
+            Flutter & Dart · BLoC · REST APIs · Android & iOS
+          </p>
 
-    <h3>Poppie Health</h3>
-    <ul>
-      <li>Real-time health plan monitoring and supplement store integration</li>
-    </ul>
-  </section>
+          <p class="hero-description">
+            Mobile Application Developer specializing in Flutter and Dart,
+            with experience building automotive, e-commerce, payment,
+            subscription, AI-powered, and event management solutions.
+            Focused on scalable architecture, API integration,
+            performance, and clean user experiences.
+          </p>
 
-  <section>
-    <h2>Experience</h2>
+          <div class="hero-buttons">
+            <a
+              class="button button-primary"
+              href="mailto:pratikdudhatra65@gmail.com"
+            >
+              Get in touch
+            </a>
 
-    <h3>Rapid Global Business Solutions, Bengaluru</h3>
-    <p><strong>Mobile Application Developer</strong> | Jul 2023 – Jan 2025</p>
-    <ul>
-      <li>Worked on Empower QLM to deliver scalable and reliable mobile solutions</li>
-      <li>Handled multi-client requirements and managed complex codebases</li>
-    </ul>
+            <a
+              class="button button-secondary"
+              href="https://www.linkedin.com/in/pratik-dudhatra-003b4b145"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
 
-    <h3>Techouts Solutions, Hyderabad</h3>
-    <p><strong>Senior Application Developer</strong> | Dec 2022 – Jun 2023</p>
-    <ul>
-      <li>Worked on Tata Neu’s bill payment module</li>
-      <li>Connected Sanity CMS with Node.js and Flutter WebView</li>
-    </ul>
+            <a
+              class="button button-secondary"
+              href="https://github.com/pratikdudhatra65"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+          </div>
 
-    <h3>Rentech Infotech, Surat</h3>
-    <p><strong>Senior Application Developer</strong> | Aug 2021 – Nov 2022</p>
-    <ul>
-      <li>Led development on SwipeCart and media apps</li>
-      <li>Supported team members on complex development tasks</li>
-    </ul>
+        </div>
+      </div>
+    </header>
 
-    <h3>IBL Infotech, Surat</h3>
-    <p><strong>Programming Analyst</strong> | Jun 2019 – Aug 2021</p>
-    <ul>
-      <li>Designed and developed Flutter apps with advanced state management</li>
-      <li>Handled debugging and performance optimization</li>
-    </ul>
-  </section>
 
-  <section>
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Frameworks:</strong> Flutter, Dart</li>
-      <li><strong>State Management:</strong> Provider, BLoC, GetX</li>
-      <li><strong>Backend & DB:</strong> Firebase (Firestore, Auth, FCM, Realtime DB), SQLite, REST APIs</li>
-      <li><strong>Tools:</strong> Git, Jira, Figma, Postman</li>
-    </ul>
-  </section>
+    <!-- About -->
+    <section id="about">
+      <div class="container">
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: pratikdudhatra65@gmail.com</p>
-    <p>Phone: +91 76987 34081</p>
-    <p><a href="https://mountainous-ray-973.notion.site/Pratik-Dudhatra-Flutter-Developer-2128afeecc38804fabbdf5772c44562b" target="_blank">View Full Portfolio on Notion</a></p>
-  </section>
+        <div class="section-label">About</div>
+        <h2>About Me</h2>
+
+        <p class="about-text">
+          I am a Mobile Application Developer with 6.5+ years of
+          professional experience specializing in Flutter and Dart.
+          I build cross-platform Android and iOS applications with a
+          strong focus on scalable feature-based architecture, state
+          management, REST API integration, performance optimization,
+          and reliable user experiences.
+          <br /><br />
+          My recent work includes automotive platforms, AI-powered
+          vehicle services, payment and subscription systems, event
+          management, media, notifications, and deep-linking flows.
+        </p>
+
+      </div>
+    </section>
+
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+
+        <div class="section-label">Toolkit</div>
+        <h2>Technologies & Skills</h2>
+
+        <div class="skills">
+          <span class="skill">Flutter</span>
+          <span class="skill">Dart</span>
+          <span class="skill">BLoC</span>
+          <span class="skill">State Management</span>
+          <span class="skill">REST APIs</span>
+          <span class="skill">Java</span>
+          <span class="skill">Node.js</span>
+          <span class="skill">Firebase</span>
+          <span class="skill">Android</span>
+          <span class="skill">iOS</span>
+          <span class="skill">Feature-Based Architecture</span>
+          <span class="skill">API Integration</span>
+          <span class="skill">Performance Optimization</span>
+          <span class="skill">GitLab</span>
+          <span class="skill">Jira</span>
+          <span class="skill">Agile</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+
+        <div class="section-label">Selected Work</div>
+        <h2>Projects</h2>
+
+        <div class="projects">
+
+          <!-- Micurato -->
+          <article class="project featured">
+
+            <div class="project-number">01 · AUTOMOTIVE PLATFORM</div>
+
+            <h3>Micurato</h3>
+
+            <p class="project-description">
+              An automotive-focused mobile platform for managing
+              vehicles, car clubs, events, media, subscriptions,
+              and AI-powered vehicle services.
+            </p>
+
+            <ul>
+              <li>
+                Designed and implemented Event Management including
+                creation/editing, event details, invitations, RSVP,
+                attendees, cars, media posts, notifications, and
+                Manage Attendees.
+              </li>
+
+              <li>
+                Implemented AI-powered vehicle services that
+                automatically generate and populate vehicle information.
+              </li>
+
+              <li>
+                Worked on payment and subscription functionality,
+                including in-app purchase flows.
+              </li>
+
+              <li>
+                Developed reusable Universal Card components for
+                Club and Event list/detail experiences.
+              </li>
+
+              <li>
+                Implemented deep linking and notification navigation
+                for events, invitations, and media content.
+              </li>
+
+              <li>
+                Integrated REST APIs with API-driven state management,
+                validation, error handling, and loading states.
+              </li>
+            </ul>
+
+            <div class="tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>BLoC</span>
+              <span>REST API</span>
+              <span>Java</span>
+              <span>Node.js</span>
+              <span>GitLab</span>
+              <span>Jira</span>
+            </div>
+
+          </article>
+
+
+          <!-- Empower -->
+          <article class="project">
+
+            <div class="project-number">02 · QUALITY MANAGEMENT</div>
+
+            <h3>Empower QLM</h3>
+
+            <p class="project-description">
+              A lifecycle management platform focused on product
+              quality, reliability, and risk throughout the
+              development lifecycle.
+            </p>
+
+            <ul>
+              <li>Developed and enhanced mobile application modules.</li>
+              <li>Worked with complex client requirements.</li>
+              <li>Improved code structure and application reliability.</li>
+            </ul>
+
+            <div class="tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Firebase</span>
+            </div>
+
+          </article>
+
+
+          <!-- Tata Neu -->
+          <article class="project">
+
+            <div class="project-number">03 · SUPER APP</div>
+
+            <h3>Tata Neu</h3>
+
+            <p class="project-description">
+              A multi-service super app offering shopping, payments,
+              travel, delivery, and other digital services.
+            </p>
+
+            <ul>
+              <li>Contributed to the bill payment module.</li>
+              <li>Designed data flow using Node.js.</li>
+              <li>Developed cross-platform WebView flows.</li>
+            </ul>
+
+            <div class="tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Node.js</span>
+              <span>WebView</span>
+            </div>
+
+          </article>
+
+
+          <!-- SwipeCart -->
+          <article class="project">
+
+            <div class="project-number">04 · E-COMMERCE</div>
+
+            <h3>SwipeCart</h3>
+
+            <p class="project-description">
+              A platform that converts Shopify and WooCommerce
+              websites into Flutter-based mobile applications.
+            </p>
+
+            <ul>
+              <li>Developed e-commerce conversion logic.</li>
+              <li>Improved mobile rendering and user experience.</li>
+              <li>Worked on application performance optimization.</li>
+            </ul>
+
+            <div class="tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+              <span>Shopify</span>
+              <span>WooCommerce</span>
+            </div>
+
+          </article>
+
+
+          <!-- MediaPam -->
+          <article class="project">
+
+            <div class="project-number">05 · MEDIA</div>
+
+            <h3>MediaPamTV</h3>
+
+            <p class="project-description">
+              A media and IT platform providing e-commerce,
+              internet marketing, and technology services.
+            </p>
+
+            <ul>
+              <li>Integrated e-commerce functionality.</li>
+              <li>Identified and fixed critical application issues.</li>
+              <li>Improved overall application stability.</li>
+            </ul>
+
+            <div class="tech">
+              <span>Flutter</span>
+              <span>Dart</span>
+            </div>
+
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Experience -->
+    <section id="experience">
+      <div class="container">
+
+        <div class="section-label">Career</div>
+        <h2>Professional Experience</h2>
+
+        <div class="experience">
+
+          <article class="experience-item">
+            <div class="experience-date">
+              Feb 2026 – Aug 2026
+            </div>
+
+            <h3>Mobile Application Developer</h3>
+
+            <p class="company">
+              Birbals Technologies Private Limited · Remote
+            </p>
+
+            <ul>
+              <li>
+                Developed and enhanced the Micurato automotive platform.
+              </li>
+
+              <li>
+                Designed Event Management functionality across
+                creation, RSVP, attendees, cars, invitations,
+                media, notifications, and management flows.
+              </li>
+
+              <li>
+                Developed payment and subscription functionality.
+              </li>
+
+              <li>
+                Implemented AI-powered vehicle data generation
+                and population.
+              </li>
+
+              <li>
+                Integrated REST APIs and backend services.
+              </li>
+            </ul>
+          </article>
+
+
+          <article class="experience-item">
+            <div class="experience-date">
+              Jul 2023 – Jan 2025
+            </div>
+
+            <h3>Mobile Application Developer</h3>
+
+            <p class="company">
+              Rapid Global Business Solutions India Pvt Ltd · Bengaluru
+            </p>
+
+            <ul>
+              <li>
+                Developed and enhanced the Empower QLM application.
+              </li>
+
+              <li>
+                Worked with complex client requirements and
+                optimized application structures.
+              </li>
+
+              <li>
+                Delivered reliable mobile solutions using Flutter.
+              </li>
+            </ul>
+          </article>
+
+
+          <article class="experience-item">
+            <div class="experience-date">
+              Dec 2022 – Jun 2023
+            </div>
+
+            <h3>Senior Application Developer</h3>
+
+            <p class="company">
+              Techouts Solutions India Private Limited · Hyderabad
+            </p>
+
+            <ul>
+              <li>
+                Contributed to the Tata Neu bill payment module.
+              </li>
+
+              <li>
+                Designed data flow using Node.js.
+              </li>
+
+              <li>
+                Developed WebView flows for mobile and web.
+              </li>
+
+              <li>
+                Worked on Twinr Web, a Flutter-based web application.
+              </li>
+            </ul>
+          </article>
+
+
+          <article class="experience-item">
+            <div class="experience-date">
+              Aug 2021 – Nov 2022
+            </div>
+
+            <h3>Senior Application Developer</h3>
+
+            <p class="company">
+              Dhameliya Infotech (Rentech Infotech) · Surat
+            </p>
+
+            <ul>
+              <li>
+                Developed SwipeCart and Flutter-based e-commerce
+                applications.
+              </li>
+
+              <li>
+                Built a paid video content application.
+              </li>
+
+              <li>
+                Mentored teammates on complex development tasks.
+              </li>
+            </ul>
+          </article>
+
+
+          <article class="experience-item">
+            <div class="experience-date">
+              Jun 2019 – Aug 2021
+            </div>
+
+            <h3>Programming Analyst</h3>
+
+            <p class="company">
+              IBL Infotech · Surat
+            </p>
+
+            <ul>
+              <li>
+                Designed and developed multiple Flutter applications.
+              </li>
+
+              <li>
+                Implemented state management techniques for
+                scalable applications.
+              </li>
+
+              <li>
+                Fixed complex bugs and implemented application logic.
+              </li>
+            </ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Education -->
+    <section>
+      <div class="container">
+
+        <div class="section-label">Education</div>
+        <h2>Education</h2>
+
+        <div class="education-card">
+          <h3>B.E. in Computer Science & Engineering</h3>
+          <p>Pacific School of Engineering · Surat, Gujarat</p>
+          <p>May 2019</p>
+        </div>
+
+        <div class="education-card">
+          <h3>Diploma in Computer Engineering</h3>
+          <p>Bhagwan Mahavir Polytechnic · Surat, Gujarat</p>
+          <p>June 2016</p>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+
+        <div class="contact-card">
+
+          <div class="section-label">Contact</div>
+
+          <h2>Let's build something useful.</h2>
+
+          <p>
+            I'm open to opportunities involving Flutter,
+            mobile application development, and challenging
+            product-focused engineering work.
+          </p>
+
+          <div class="contact-links">
+
+            <a
+              class="button button-primary"
+              href="mailto:pratikdudhatra65@gmail.com"
+            >
+              Email Me
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://www.linkedin.com/in/pratik-dudhatra-003b4b145"
+              target="_blank"
+              rel="noopener"
+            >
+              LinkedIn
+            </a>
+
+            <a
+              class="button button-secondary"
+              href="https://github.com/pratikdudhatra65"
+              target="_blank"
+              rel="noopener"
+            >
+              GitHub
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container">
+      © 2026 Pratik Dudhatra · Mobile Application Developer
+    </div>
+  </footer>
+
 </body>
 </html>
